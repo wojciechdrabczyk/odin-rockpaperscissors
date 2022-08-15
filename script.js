@@ -1,9 +1,9 @@
-// Generating random computer choice of Rock Paper Scissors
+// Generating random computer choice of Rock Paper Scissors.
 const choice = ["rock", "paper", "scissors"];
 const getComputerChoice = () => {
   return choice[Math.floor(Math.random() * choice.length)];
 };
-
+// Rules of Rock Paper Scissors.
 const playRound = (playerSelection) => {
   const computerSelection = getComputerChoice();
   if (playerSelection === "paper" && computerSelection === "rock") {
@@ -24,6 +24,8 @@ const playRound = (playerSelection) => {
     return 0;
   }
 };
+
+// Printing out the result of the game.
 const printGameResultText = (result) => {
   if (result > 0) {
     console.log(`You won, congratulations. Your score was ${result} point(s)`);
@@ -33,9 +35,11 @@ const printGameResultText = (result) => {
     console.log("You tied.");
   }
 };
+// Storing and incrementing reported current result of the game.
 const game = () => {
   let result = 0;
   for (let i = 0; i < 5; i++) {
+    // Start of the game prompt.
     const play = prompt(
       "Type your choice of Rock Paper or Scissors",
       ""
@@ -45,5 +49,3 @@ const game = () => {
   printGameResultText(result);
 };
 game();
-
-// console.log(playRound(playerSelection.toLowerCase()));
